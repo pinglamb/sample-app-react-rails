@@ -1,24 +1,21 @@
-# README
+# Reach+Rails sample app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is for demonstrating the use of React in Rails for building Frontend components. Using React has the advantage that the DOM and JS behaviour can be grouped in the same place.
 
-Things you may want to cover:
+## Stocky Component
 
-* Ruby version
+The component I build using React in this app is called Stocky. It is a combination of 2 inputs, a text box and a toggle. The text box is for entering arbitrary text and the toggle will clean up the text and disable it. One of the use case for it is for inventory level input which supports unlimited stock. User can enter the stock level using the text box, and if it is unlimited stock, they can click the toggle.
 
-* System dependencies
+## Key Files
 
-* Configuration
+### `app/assets/javascripts/components/stocky.js.jsx.coffee`
 
-* Database creation
+It defines the component. The necessary DOM and JS are all there.
 
-* Database initialization
+### `app/inputs/stocky_input.rb`
 
-* How to run the test suite
+A `simple_form` input which will render the component using `#react_component`.
 
-* Services (job queues, cache servers, search engines, etc.)
+### `app/views/products/new.html.slim`
 
-* Deployment instructions
-
-* ...
+Form that uses the stocky input.
